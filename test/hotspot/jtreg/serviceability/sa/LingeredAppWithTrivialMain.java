@@ -1,12 +1,10 @@
 /*
- * Copyright (c) 2015, 2018, Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 2019, Oracle and/or its affiliates. All rights reserved.
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
  *
  * This code is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License version 2 only, as
- * published by the Free Software Foundation.  Oracle designates this
- * particular file as subject to the "Classpath" exception as provided
- * by Oracle in the LICENSE file that accompanied this code.
+ * published by the Free Software Foundation.
  *
  * This code is distributed in the hope that it will be useful, but WITHOUT
  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
@@ -23,17 +21,15 @@
  * questions.
  */
 
-package sun.java2d.marlin;
+import jdk.test.lib.apps.LingeredApp;
 
-public final class Version {
-
-    private static final String VERSION = "marlin-0.9.1.3-Unsafe-OpenJDK";
-
-    public static String getVersion() {
-        return VERSION;
+/**
+ * This is a wrapper around LingeredApp.main to ensure we reliably get a
+ * compiled main nmethod in the stack trace on all platforms when using
+ * -Xcomp.
+ */
+public class LingeredAppWithTrivialMain extends LingeredApp {
+    public static void main(String args[]) {
+        LingeredApp.main(args);
     }
-
-    private Version() {
-    }
-
-}
+ }
