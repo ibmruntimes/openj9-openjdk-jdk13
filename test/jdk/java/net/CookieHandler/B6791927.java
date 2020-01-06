@@ -37,7 +37,9 @@ public class B6791927 {
         try {
             // Forces a non US locale
             Locale.setDefault(Locale.FRANCE);
-            List<HttpCookie> cookies = HttpCookie.parse("set-cookie: CUSTOMER=WILE_E_COYOTE; expires=Sat, 09-Nov-2019 23:12:40 GMT");
+            List<HttpCookie> cookies = HttpCookie.parse("set-cookie:" +
+                    " CUSTOMER=WILE_E_COYOTE;" +
+                    " expires=Sat, 09-Nov-2041 23:12:40 GMT");
             if (cookies == null || cookies.isEmpty()) {
                 throw new RuntimeException("No cookie found");
             }
