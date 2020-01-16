@@ -1,5 +1,5 @@
 # ===========================================================================
-# (c) Copyright IBM Corp. 2017, 2019 All Rights Reserved
+# (c) Copyright IBM Corp. 2017, 2020 All Rights Reserved
 # ===========================================================================
 # This code is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License version 2 only, as
@@ -57,6 +57,9 @@ endif
 # DDR
 OPENJ9_ENABLE_DDR       := @OPENJ9_ENABLE_DDR@
 
+# JITSERVER
+OPENJ9_ENABLE_JITSERVER := @OPENJ9_ENABLE_JITSERVER@
+
 # for constructing version output
 COMPILER_VERSION_STRING := @COMPILER_VERSION_STRING@
 USERNAME                := @USERNAME@
@@ -64,8 +67,8 @@ OPENJDK_SHA             := @OPENJDK_SHA@
 
 include $(TOPDIR)/closed/openjdk-tag.gmk
 
-# J9JDK_EXT_VERSION       := ${VERSION_NUMBER_FOUR_POSITIONS}
-J9JDK_EXT_VERSION       := HEAD
+J9JDK_EXT_VERSION       := ${VERSION_NUMBER_FOUR_POSITIONS}-m2
+#J9JDK_EXT_VERSION       := HEAD
 J9JDK_EXT_NAME          := Extensions for OpenJDK for Eclipse OpenJ9
 
 # required by CMake
